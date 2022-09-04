@@ -1,20 +1,13 @@
 const express = require ("express");
+const { getAdminController, postNewsController, UpdateNewsController, deleteNews } = require("../controllers/admin.controller");
 const router = express.Router();
 
-router.get ('/', (req,res)=>{
+router.get ('/', getAdminController)
 
-})
+router.post ('/', postNewsController)
 
-router.post ('/', (req,res)=>{
+router.patch ('/', UpdateNewsController)
 
-})
-
-router.patch ('/', (req,res)=>{
-
-})
-
-router.delete ('/', (req,res)=>{
-
-})
+router.delete ('/', deleteNews)
 
 module.exports=router
