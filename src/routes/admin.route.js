@@ -1,13 +1,14 @@
 const express = require ("express");
 const { getAdminController, postNewsController, UpdateNewsController, deleteNews } = require("../controllers/admin.controller");
 const router = express.Router();
+const {jwtValidators} = require('../middlewares/jwtValidations')
 
-router.get ('/', getAdminController)
+router.get ('/',jwtValidators,getAdminController)
 
-router.post ('/', postNewsController)
+router.post ('/',jwtValidators,postNewsController)
 
-router.patch ('/', UpdateNewsController)
+router.patch ('/:id',jwtValidators,UpdateNewsController)
 
-router.delete ('/', deleteNews)
+router.delete ('/:id',jwtValidators,deleteNews)
 
 module.exports=router
