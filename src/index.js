@@ -10,9 +10,9 @@ require('./dataBase/connection')
 const adminRoute = require ('./routes/admin.route')
 const loginRoute = require('./routes/login.route')
 const registerRoute = require ('./routes/register.route')
+const {jwtValidators}=require('./middlewares/jwtValidations')
 
-
-app.use ('/admin',adminRoute)
+app.use ('/admin',jwtValidators,adminRoute)
 app.use('/login',loginRoute)
 app.use ('/register', registerRoute)
 app.listen (PORT, ()=>{
