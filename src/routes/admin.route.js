@@ -3,7 +3,7 @@ const { getAdminController, postNewsController, UpdateNewsController, deleteNews
 const router = express.Router();
 const {jwtValidators} = require('../middlewares/jwtValidations')
 
-router.get ('/',jwtValidators,getAdminController)
+router.post ('/',jwtValidators,getAdminController)
 
 router.post ('/',jwtValidators,postNewsController)
 

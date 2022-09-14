@@ -1,7 +1,7 @@
 const jwt = require ('jsonwebtoken');
 
 const jwtValidators = async (req,res,next) =>{
-    const token = req.headers['acces-token']
+    const token = req.headers['acces_token']
 
     if (token) {
         jwt.verify(token,process.env.JWT_SECRET, (err)=>{
