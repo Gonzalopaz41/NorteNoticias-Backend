@@ -26,7 +26,7 @@ const newsSchema=mongoose.Schema({
         require:true
     },
     author:{
-        type:Date,
+        type:String,
         require:true
     }
 })

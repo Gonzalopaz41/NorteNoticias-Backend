@@ -3,9 +3,9 @@ const { getAdminController, postNewsController, UpdateNewsController, deleteNews
 const router = express.Router();
 const {jwtValidators} = require('../middlewares/jwtValidations')
 
-router.post ('/',jwtValidators,getAdminController)
+router.post ('/get',jwtValidators,getAdminController)
 
-router.post ('/',jwtValidators,postNewsController)
+router.post ('/post',jwtValidators,postNewsController)
 
 router.patch ('/:id',jwtValidators,UpdateNewsController)
 
