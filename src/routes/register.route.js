@@ -5,7 +5,7 @@ const {body} = require ('express-validator')
 //const {validateEmail} = require('../helpers/validation.js')
 const {errors} = require ('../helpers/validation')
 
-router.post('/',getUsers);
+router.post('/users',getUsers);
 
 router.post('/',
     body('email', 'Ingrese un E-mail valido')
