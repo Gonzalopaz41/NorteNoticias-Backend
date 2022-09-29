@@ -18,11 +18,11 @@ const userSchema = mongoose.Schema({
         type:String,
         required:true
      }
-   //    ,
-   //   roll:{
-   //    type:String,
-   //    roll:"admin"
-   //   }
+      ,
+     admin:{
+       type:Boolean
+       
+     }
 })
 
 module.exports=mongoose.model('user',userSchema)
