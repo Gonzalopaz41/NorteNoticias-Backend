@@ -9,6 +9,6 @@ router.post ('/post',jwtValidators,postNewsController)
 
 router.patch ('/editar/:id',jwtValidators,UpdateNewsController)
 
-router.delete (':id',jwtValidators,deleteNews)
+router.delete ('/eliminar/:id',jwtValidators,deleteNews)
 
 module.exports=router
