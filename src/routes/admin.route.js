@@ -7,8 +7,8 @@ router.post ('/get',jwtValidators,getAdminController)
 
 router.post ('/post',jwtValidators,postNewsController)
 
-router.patch ('/:id',jwtValidators,UpdateNewsController)
+router.patch ('/editar/:id',jwtValidators,UpdateNewsController)
 
-router.delete ('/:id',jwtValidators,deleteNews)
+router.delete ('/eliminar/:id',jwtValidators,deleteNews)
 
 module.exports=router
