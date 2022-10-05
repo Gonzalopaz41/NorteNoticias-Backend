@@ -14,12 +14,14 @@ const postLogin = async (req,res) =>{
         if (match){
             const payload = {
                 id: searchEmail._id,
-                email:searchEmail.email
+                email:searchEmail.email,
+                roll:searchEmail.admin
             }
             const token = jwt.sign(payload,process.env.JWT_SECRET,{
                 expiresIn: '7d'
             })
-            res.status(200).json({msg:"Usuario logueado", token})
+            const rollAdmin = searchEmail.admin
+            res.status(200).json({msg:"Usuario logueado", token, rollAdmin})
     }
     else{
         const error = new Error ("verifica los datos");

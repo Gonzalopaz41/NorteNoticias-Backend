@@ -15,7 +15,7 @@ const getUsers= async (req,res)=>{
 }
 
 const postRegister = async (req,res)=>{
-    const {name, surname, email, password} = req.body
+    const {name, surname, email, password,admin} = req.body
     //const {email} = req.body;
     const userExist = await User.findOne({email});
 
@@ -40,7 +40,7 @@ const postRegister = async (req,res)=>{
     
     try {
         const user = new User({
-            name,surname, email, password
+            name,surname, email, password, admin
             /*name:req.body.name,
             surname:req.body.surname,
             email:req.body.email,
